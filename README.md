@@ -88,8 +88,8 @@ The shell app will automatically load:
 
 ## Additional Documentation
 
-- [NGRX_SETUP.md](shell/NGRX_SETUP.md) - Setup and configuration of NgRx state management in the shell application
-- [STORE_INTEGRATION.md](mfe-products/STORE_INTEGRATION.md) - Integration guide for the products MFE with the NgRx store
+- [NGRX_SETUP.md](NGRX_SETUP.md) - Setup and configuration of NgRx state management in the shell application
+- [STORE_INTEGRATION.md](STORE_INTEGRATION.md) - Integration guide for the products MFE with the NgRx store
 
 ## Benefits
 
