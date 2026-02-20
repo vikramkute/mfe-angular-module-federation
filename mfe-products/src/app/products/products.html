@@ -1,0 +1,66 @@
+<div class="products-container">
+  <h2>Products</h2>
+  <p>This is the products micro frontend component.</p>
+  
+  <div class="user-info" *ngIf="isAuthenticated$ | async">
+    <div class="info-card">
+      <h3>User Information from Shared Store</h3>
+      <p class="username">
+        <strong>Logged in as:</strong> 
+        <span class="highlight">{{ userName$ | async }}</span>
+      </p>
+      <p class="note">
+        ℹ️ This username is retrieved from the global NgRx store managed by the shell application.
+      </p>
+      
+      <div class="update-section">
+        <button class="update-btn" (click)="toggleUpdateForm()">
+          {{ showUpdateForm ? 'Cancel' : 'Update Username' }}
+        </button>
+        
+        <div class="update-form" *ngIf="showUpdateForm">
+          <input 
+            type="text" 
+            [(ngModel)]="newUsername" 
+            placeholder="Enter new username (min 3 chars)"
+            class="username-input"
+            (keyup.enter)="updateUsername()"
+          />
+          <button 
+            class="save-btn" 
+            (click)="updateUsername()"
+            [disabled]="newUsername.trim().length < 3"
+          >
+            Save Changes
+          </button>
+        </div>
+        
+        <p class="update-note" *ngIf="showUpdateForm">
+          💡 This will update the username in the shell's global store, and all MFEs will see the change!
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="products-list">
+    <h3>Available Products</h3>
+    <div class="product-grid">
+      <div class="product-card">
+        <h4>Product 1</h4>
+        <p>Description of product 1</p>
+        <button>View Details</button>
+      </div>
+      <div class="product-card">
+        <h4>Product 2</h4>
+        <p>Description of product 2</p>
+        <button>View Details</button>
+      </div>
+      <div class="product-card">
+        <h4>Product 3</h4>
+        <p>Description of product 3</p>
+        <button>View Details</button>
+      </div>
+    </div>
+  </div>
+</div>
+

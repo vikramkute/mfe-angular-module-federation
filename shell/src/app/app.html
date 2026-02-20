@@ -1,0 +1,17 @@
+<!-- Show login screen when not authenticated -->
+<app-login *ngIf="!(isAuthenticated$ | async)"></app-login>
+
+<!-- Show main app content when authenticated -->
+<div *ngIf="isAuthenticated$ | async" class="app-container">
+  <div class="user-bar">
+    <span class="welcome-text">Welcome, {{ userName$ | async }}!</span>
+    <button class="logout-button" (click)="logout()">Logout</button>
+  </div>
+  
+  <div class="main-content">
+    <ng-container #header></ng-container>
+    <router-outlet></router-outlet>
+    <ng-container #footer></ng-container>
+  </div>
+</div>
+

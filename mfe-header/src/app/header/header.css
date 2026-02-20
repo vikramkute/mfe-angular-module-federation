@@ -1,0 +1,11 @@
+header {
+  background: #1976d2;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+nav a {
+  color: white;
+  margin: 0 10px;
+}
