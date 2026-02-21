@@ -3,14 +3,14 @@ import { RouterOutlet } from '@angular/router';
 import { loadRemoteModule } from '@angular-architects/module-federation';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
-import { AsyncPipe, NgIf } from '@angular/common';
+import { AsyncPipe } from '@angular/common';
 import { selectIsAuthenticated, selectUserName, logout } from './store/user';
 import { LoginComponent } from './login/login.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, AsyncPipe, NgIf, LoginComponent],
+  imports: [RouterOutlet, AsyncPipe, LoginComponent],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
@@ -38,7 +38,10 @@ export class App implements OnInit {
 
   logout() {
     this.store.dispatch(logout());
-    // Clear the header and footer containers
+    this.clearContainers();
+  }
+
+  private clearContainers(): void {
     if (this.headerContainer) {
       this.headerContainer.clear();
     }

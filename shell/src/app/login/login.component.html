@@ -10,7 +10,8 @@
           type="text"
           id="username"
           name="username"
-          [(ngModel)]="username"
+          [value]="username()"
+          (input)="username.set($any($event).target.value)"
           placeholder="Enter your username"
           required
           autocomplete="username"
@@ -23,16 +24,19 @@
           type="password"
           id="password"
           name="password"
-          [(ngModel)]="password"
+          [value]="password()"
+          (input)="password.set($any($event).target.value)"
           placeholder="Enter your password"
           required
           autocomplete="current-password"
         />
       </div>
 
-      <div class="error-message" *ngIf="errorMessage">
-        {{ errorMessage }}
-      </div>
+      @if (errorMessage()) {
+        <div class="error-message">
+          {{ errorMessage() }}
+        </div>
+      }
 
       <button type="submit" class="login-button">
         Sign In

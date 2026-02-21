@@ -12,7 +12,7 @@ export const selectUserState = createFeatureSelector<UserState>('user');
 // Selectors
 export const selectUserName = createSelector(
   selectUserState,
-  (state) => state?.name || null
+  (state) => state?.name ?? null
 );
 
 export const selectIsAuthenticated = createSelector(
