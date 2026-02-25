@@ -6,11 +6,12 @@ import { Observable } from 'rxjs';
 import { AsyncPipe } from '@angular/common';
 import { selectIsAuthenticated, selectUserName, logout } from './store/user';
 import { LoginComponent } from './login/login.component';
+import { Header } from 'common-ui-lib';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, AsyncPipe, LoginComponent],
+  imports: [RouterOutlet, AsyncPipe, LoginComponent, Header],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
