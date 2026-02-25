@@ -1,6 +1,10 @@
 # Micro Frontend Architecture with Angular
 
-This project demonstrates a micro frontend architecture using Angular and Module Federation.
+> ⚠️ **IMPORTANT**: All development tasks and code generation must reference [ANGULAR_MATERIAL_GUIDELINES.md](ANGULAR_MATERIAL_GUIDELINES.md) for Angular 21 standards, Material Design, and code style requirements.
+> 
+> 🤖 **For ALL AI Assistants**: Amazon Q, Claude, Gemini, Copilot, and any code generator - these guidelines MUST be followed.
+
+This project demonstrates a micro frontend architecture using Angular 21 with Module Federation, Angular Material, and Angular Signals for state management.
 
 ## Architecture
 
@@ -11,6 +15,21 @@ This project demonstrates a micro frontend architecture using Angular and Module
 - **mfe-about** (Port 4204) - About micro frontend
 - **mfe-contact** (Port 4205) - Contact micro frontend
 - **mfe-products** (Port 4206) - Products micro frontend
+
+## 📋 Development Standards
+
+**🚀 BEFORE STARTING ANY DEVELOPMENT TASK**, read [ANGULAR_MATERIAL_GUIDELINES.md](ANGULAR_MATERIAL_GUIDELINES.md):
+
+### Key Development Rules (Angular 21)
+- ✅ **Common-UI-Lib** - Use shared components from common-ui-lib (header, footer, layouts)
+- ✅ **Signals** - Preferred for component state (eliminates memory leak concerns)
+- ✅ **Material Design** - All UI components from Angular Material 21
+- ✅ **John Papa Style** - Code naming, organization, and best practices
+- ✅ **Standalone Components** - All new components must be standalone
+- ✅ **Reactive Forms** - All forms must use reactive approach
+- ✅ **RxJS for Async** - Only for HTTP requests and complex operations
+
+**This is not optional.** All code generation, refactoring, and development decisions must reference these guidelines.
 
 ## How It Works
 
@@ -88,6 +107,7 @@ The shell app will automatically load:
 
 ## Additional Documentation
 
+- [Angular Material & Code Guidelines](ANGULAR_MATERIAL_GUIDELINES.md) - **Copilot Instructions**: Material Design components, John Papa code style, and development best practices
 - [NGRX_SETUP.md](NGRX_SETUP.md) - Setup and configuration of NgRx state management in the shell application
 - [STORE_INTEGRATION.md](STORE_INTEGRATION.md) - Integration guide for the products MFE with the NgRx store
 
